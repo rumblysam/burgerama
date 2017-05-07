@@ -16,6 +16,25 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
     burger.create([
-        "name", ""
-    ])
-})
+        "name", "lettuce"
+    ], [
+        req.body.name, req.body.sleepy
+    ], function() {
+        res.redirect("/");
+    });
+});
+
+router.put("/:id", function(req,res) {
+    var condition = "id = " + req.params.id;
+
+    console.log("condition", condition);
+
+    cat.update({
+        lettuce: req.body.name
+    }, condition, function() {
+        res.redirect("/");
+    });
+});
+
+module.exports = router;
+
