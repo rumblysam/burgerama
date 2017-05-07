@@ -1,0 +1,12 @@
+h1 {
+    margin:auto;
+    width: 50%;
+    padding-left: 40px;
+}
+.burgerInput {
+    margin: auto;
+    width: 45%;
+}
+.fa-plus-circle {
+    width: 40%;
+}
