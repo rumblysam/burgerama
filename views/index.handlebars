@@ -1,0 +1,33 @@
+<h1>Burgerama</h1>
+
+<p>List your favorite burgers</p>
+
+<ul>
+    {{#each burger}}
+    <li>
+        <p><span class="label">ID:</span> {{this.id}}</p>
+        <p><span class="label">Burger:</span> {{this.burger}}</p>
+    
+
+        {{!-- Form should send a delete command to the server--}}
+        <form>
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit">Delete</button>
+        </form>
+
+        <a href="/{{this.id}}">Update this burger</a>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+
+{{!-- Form should send a post command to the server--}}
+<form class="create-form">
+    <div class="form-group">
+        <label for="burg">Burger:</label>
+        <input type="text" id="burg" name="burger">
+    </div>
+
+    <button type="submit">Add Quote</button>
+</form>
